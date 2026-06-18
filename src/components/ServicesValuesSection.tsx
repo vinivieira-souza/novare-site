@@ -1,5 +1,10 @@
+'use client'
+
 import { ArrowIcon } from "@/assets/icons/Icons";
 import { services, values } from "@/data/site-content";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stage } from "@react-three/drei";
+import { LogoNovare3d } from "./LogoNovare3d";
 
 export function ServicesValuesSection() {
   return (
@@ -7,34 +12,45 @@ export function ServicesValuesSection() {
       <div className="scroll-pin-wrapper relative min-h-screen w-full">
         <div className="horizontal-scroll-track flex w-[200vw]">
           {/* Fase 1 — Nossos Serviços */}
-          <div className="services-panel bg-novare-purple-light services-section-shadow relative md:h-screen w-screen shrink-0 md:overflow-hidden rounded-[35px]">
-            <div className="services-panel-inner relative mx-auto flex flex-col md:flex-row md:h-full max-w-dvw px-10">
+          <div className="services-panel bg-novare-purple-light services-section-shadow relative w-screen shrink-0 rounded-[35px] md:h-screen md:overflow-hidden">
+            <div className="services-panel-inner relative mx-auto flex max-w-dvw flex-col px-10 md:h-full md:flex-row">
               {/* Coluna esquerda — Logo 3D + CTA */}
-              <div className="services-left-column order-last md:order-first flex w-full md:w-1/2 flex-col items-center justify-center gap-4 md:gap-10 py-8 md:pt-16 md:pb-0">
+              <div className="services-left-column order-last flex w-full flex-col items-center justify-center gap-4 py-8 md:order-first md:w-1/2 md:gap-10 md:pt-16 md:pb-0">
                 <div
-                  className="threejs-logo-canvas-container relative h-64 w-full max-w-[671px]"
+                  className="threejs-logo-canvas-container relative h-64 md:h-96 w-full max-w-[671px]"
                   aria-hidden="true"
-                />
+                >
+                  <Canvas
+                    camera={{ position: [0, 0, 5], fov: 45 }}
+                    gl={{ antialias: true, alpha: true }}
+                  >
+                    <ambientLight intensity={0.7} />
+                    <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
+                    <pointLight position={[-5, -5, -5]} intensity={0.5} />
+                    <LogoNovare3d />
+                    <OrbitControls enableZoom={false} enablePan={false} />
+                  </Canvas>
+                </div>
 
-                <p className="services-cta-text max-w-[450px] text-center font-(family-name:--font-montserrat) text-2xl md:text-[clamp(1.5rem,2.5vw,2.25rem)] leading-tight text-black">
+                <p className="services-cta-text max-w-[450px] text-center font-(family-name:--font-montserrat) text-2xl leading-tight text-black md:text-[clamp(1.5rem,2.5vw,2.25rem)]">
                   Quer saber mais sobre nossos serviços?
                 </p>
 
                 <a
                   href="#contato"
-                  className="services-contact-button primary-button bg-novare-dark inline-flex h-11 md:h-14 items-center gap-3 rounded-lg pr-1.5 md:pr-2 pl-6 md:pl-[34px] active:scale-95 md:hover:brightness-110 transition-all duration-300 md:hover:scale-105"
+                  className="services-contact-button primary-button bg-novare-dark inline-flex h-11 items-center gap-3 rounded-lg pr-1.5 pl-6 transition-all duration-300 active:scale-95 md:h-14 md:pr-2 md:pl-[34px] md:hover:scale-105 md:hover:brightness-110"
                 >
                   <span className="text-novare-purple-light font-(family-name:--font-poppins) text-base font-semibold">
                     Fale Conosco
                   </span>
-                  <span className="bg-novare-purple-light flex size-8 md:size-10 items-center justify-center rounded-lg">
+                  <span className="bg-novare-purple-light flex size-8 items-center justify-center rounded-lg md:size-10">
                     <ArrowIcon className="text-novare-dark size-4" />
                   </span>
                 </a>
               </div>
 
               <div
-                className="services-pagination-dots hidden md:flex items-end justify-center gap-[15px] py-5"
+                className="services-pagination-dots hidden items-end justify-center gap-[15px] py-5 md:flex"
                 aria-hidden="true"
               >
                 <span className="services-dot-active h-[15px] w-[30px] rounded-full bg-black/20" />
@@ -42,12 +58,12 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Coluna direita — Cards de serviços */}
-              <div className="services-right-column relative flex w-full md:w-1/2 flex-col pt-16 md:pl-16">
-                <h2 className="services-section-title text-novare-text-dark font-(family-name:--font-jetbrains-mono) text-2xl md:text-4xl font-bold tracking-[0.0278em]">
+              <div className="services-right-column relative flex w-full flex-col pt-16 md:w-1/2 md:pl-16">
+                <h2 className="services-section-title text-novare-text-dark font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-[0.0278em] md:text-4xl">
                   Nossos Serviços
                 </h2>
 
-                <div className="services-trigger-container relative mt-10 h-auto md:h-[720px] overflow-visible md:overflow-hidden">
+                <div className="services-trigger-container relative mt-10 h-auto overflow-visible md:h-[720px] md:overflow-hidden">
                   <div className="services-cards-stack flex flex-col gap-[45px]">
                     {services.map((service, index) => {
                       const ComponentIcon = service.icon;
@@ -59,7 +75,7 @@ export function ServicesValuesSection() {
                           <div className="service-card-curves" aria-hidden="true" />
 
                           <div
-                            className={`service-card-icon absolute top-0 right-0 flex size-16 md:size-[75px] items-center justify-center rounded-full ${service.iconBgClass} z-10`}
+                            className={`service-card-icon absolute top-0 right-0 flex size-16 items-center justify-center rounded-full md:size-[75px] ${service.iconBgClass} z-10`}
                             style={{
                               boxShadow:
                                 "2px 2px 6px 0px rgba(0, 0, 0, 0.15), inset 6px 6px 10px 0px rgba(0, 0, 0, 0.25), inset -6px -6px 10px 0px rgba(109, 109, 109, 0.25), inset 2px 2px 3px 0px rgba(255, 255, 255, 0.25), inset -1px -1px 3px 0px rgba(255, 255, 255, 0.25)",
@@ -69,11 +85,11 @@ export function ServicesValuesSection() {
                           </div>
 
                           <div className="relative z-10">
-                            <h3 className="service-card-title text-novare-text-dark/80 p-1 md:p-2 md:py-4 font-(family-name:--font-poppins) text-xl md:text-[32px] leading-5 font-medium max-w-[50%] md:max-w-[90%]">
+                            <h3 className="service-card-title text-novare-text-dark/80 max-w-[50%] p-1 font-(family-name:--font-poppins) text-xl leading-5 font-medium md:max-w-[90%] md:p-2 md:py-4 md:text-[32px]">
                               {service.title}
                             </h3>
 
-                            <p className="service-card-description text-novare-text-body pt-6 md:pt-8 md:px-1 font-(family-name:--font-poppins) text-sm md:text-base leading-5">
+                            <p className="service-card-description text-novare-text-body pt-6 font-(family-name:--font-poppins) text-sm leading-5 md:px-1 md:pt-8 md:text-base">
                               {service.description}
                             </p>
                           </div>
