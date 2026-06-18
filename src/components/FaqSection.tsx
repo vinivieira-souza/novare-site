@@ -3,12 +3,12 @@ import { faqItems } from "@/data/site-content";
 
 export function FaqSection() {
   return (
-    <section id="faq" className="scroll-section scroll-section-faq relative w-full px-10 py-[90px]">
-      <h2 className="faq-title mx-auto max-w-[655px] text-center font-(family-name:--font-jetbrains-mono) text-[clamp(2rem,4vw,3.5rem)] leading-10 font-bold tracking-[-0.0161em] text-white">
+    <section id="faq" className="scroll-section scroll-section-faq relative w-full px-6 pt-14 pb-[90px] md:py-[90px]">
+      <h2 className="faq-title mx-auto max-w-dvw md:max-w-[655px] text-center font-(family-name:--font-jetbrains-mono) text-[clamp(2rem,4vw,3.5rem)] leading-10 font-bold tracking-[-0.0161em] text-white">
         Perguntas Frequentes
       </h2>
 
-      <div className="faq-list mx-auto mt-[65px] max-w-[640px]">
+      <div className="faq-list mx-auto mt-12 md:mt-[65px] max-w-[640px]">
         {faqItems.map((item, index) => (
           <details
             key={item.question}

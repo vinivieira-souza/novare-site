@@ -7,34 +7,34 @@ export function ServicesValuesSection() {
       <div className="scroll-pin-wrapper relative min-h-screen w-full">
         <div className="horizontal-scroll-track flex w-[200vw]">
           {/* Fase 1 — Nossos Serviços */}
-          <div className="services-panel bg-novare-purple-light services-section-shadow relative h-screen w-screen shrink-0 overflow-hidden rounded-[35px]">
-            <div className="services-panel-inner relative mx-auto flex h-full max-w-[1920px] px-10">
+          <div className="services-panel bg-novare-purple-light services-section-shadow relative md:h-screen w-screen shrink-0 md:overflow-hidden rounded-[35px]">
+            <div className="services-panel-inner relative mx-auto flex flex-col md:flex-row md:h-full max-w-dvw px-10">
               {/* Coluna esquerda — Logo 3D + CTA */}
-              <div className="services-left-column flex w-1/2 flex-col items-center justify-center gap-10 pt-16">
+              <div className="services-left-column order-last md:order-first flex w-full md:w-1/2 flex-col items-center justify-center gap-4 md:gap-10 py-8 md:pt-16 md:pb-0">
                 <div
                   className="threejs-logo-canvas-container relative h-64 w-full max-w-[671px]"
                   aria-hidden="true"
                 />
 
-                <p className="services-cta-text max-w-[450px] text-center font-(family-name:--font-montserrat) text-[clamp(1.5rem,2.5vw,2.25rem)] leading-tight text-black">
+                <p className="services-cta-text max-w-[450px] text-center font-(family-name:--font-montserrat) text-2xl md:text-[clamp(1.5rem,2.5vw,2.25rem)] leading-tight text-black">
                   Quer saber mais sobre nossos serviços?
                 </p>
 
                 <a
                   href="#contato"
-                  className="services-contact-button primary-button bg-novare-dark hover: inline-flex h-14 items-center gap-3 rounded-lg pr-2 pl-[34px] brightness-110 transition-all duration-300 hover:scale-105"
+                  className="services-contact-button primary-button bg-novare-dark inline-flex h-11 md:h-14 items-center gap-3 rounded-lg pr-1.5 md:pr-2 pl-6 md:pl-[34px] active:scale-95 md:hover:brightness-110 transition-all duration-300 md:hover:scale-105"
                 >
                   <span className="text-novare-purple-light font-(family-name:--font-poppins) text-base font-semibold">
                     Fale Conosco
                   </span>
-                  <span className="bg-novare-purple-light flex size-10 items-center justify-center rounded-lg">
+                  <span className="bg-novare-purple-light flex size-8 md:size-10 items-center justify-center rounded-lg">
                     <ArrowIcon className="text-novare-dark size-4" />
                   </span>
                 </a>
               </div>
 
               <div
-                className="services-pagination-dots flex items-end justify-center gap-[15px] py-5"
+                className="services-pagination-dots hidden md:flex items-end justify-center gap-[15px] py-5"
                 aria-hidden="true"
               >
                 <span className="services-dot-active h-[15px] w-[30px] rounded-full bg-black/20" />
@@ -42,12 +42,12 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Coluna direita — Cards de serviços */}
-              <div className="services-right-column relative flex w-1/2 flex-col pt-16 pl-16">
-                <h2 className="services-section-title text-novare-text-dark font-(family-name:--font-jetbrains-mono) text-4xl font-bold tracking-[0.0278em]">
+              <div className="services-right-column relative flex w-full md:w-1/2 flex-col pt-16 md:pl-16">
+                <h2 className="services-section-title text-novare-text-dark font-(family-name:--font-jetbrains-mono) text-2xl md:text-4xl font-bold tracking-[0.0278em]">
                   Nossos Serviços
                 </h2>
 
-                <div className="services-trigger-container relative mt-10 h-[720px] overflow-hidden">
+                <div className="services-trigger-container relative mt-10 h-auto md:h-[720px] overflow-visible md:overflow-hidden">
                   <div className="services-cards-stack flex flex-col gap-[45px]">
                     {services.map((service, index) => {
                       const ComponentIcon = service.icon;
@@ -59,21 +59,21 @@ export function ServicesValuesSection() {
                           <div className="service-card-curves" aria-hidden="true" />
 
                           <div
-                            className={`service-card-icon absolute top-0 right-0 flex size-[75px] items-center justify-center rounded-full ${service.iconBgClass} z-10`}
+                            className={`service-card-icon absolute top-0 right-0 flex size-16 md:size-[75px] items-center justify-center rounded-full ${service.iconBgClass} z-10`}
                             style={{
                               boxShadow:
                                 "2px 2px 6px 0px rgba(0, 0, 0, 0.15), inset 6px 6px 10px 0px rgba(0, 0, 0, 0.25), inset -6px -6px 10px 0px rgba(109, 109, 109, 0.25), inset 2px 2px 3px 0px rgba(255, 255, 255, 0.25), inset -1px -1px 3px 0px rgba(255, 255, 255, 0.25)",
                             }}
                           >
-                            <ComponentIcon className="text-novare-white-90 size-9" />
+                            <ComponentIcon className="text-novare-white-90 size-7 md:size-9" />
                           </div>
 
                           <div className="relative z-10">
-                            <h3 className="service-card-title text-novare-text-dark/80 absolute top-10 left-[35px] font-(family-name:--font-poppins) text-[32px] leading-5 font-medium">
+                            <h3 className="service-card-title text-novare-text-dark/80 p-1 md:p-2 md:py-4 font-(family-name:--font-poppins) text-xl md:text-[32px] leading-5 font-medium max-w-[50%] md:max-w-[90%]">
                               {service.title}
                             </h3>
 
-                            <p className="service-card-description text-novare-text-body absolute top-[110px] left-[35px] max-w-[450px] font-(family-name:--font-poppins) text-base leading-5">
+                            <p className="service-card-description text-novare-text-body pt-6 md:pt-8 md:px-1 font-(family-name:--font-poppins) text-sm md:text-base leading-5">
                               {service.description}
                             </p>
                           </div>
@@ -81,7 +81,7 @@ export function ServicesValuesSection() {
                       );
                     })}
                   </div>
-                  <div className="service-card-fade" aria-hidden="true" />
+                  <div className="service-card-fade hidden md:block" aria-hidden="true" />
                 </div>
               </div>
             </div>
