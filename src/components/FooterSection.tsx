@@ -7,7 +7,7 @@ export function FooterSection() {
   return (
     <footer
       id="contato"
-      className="scroll-section scroll-section-footer relative h-full min-h-dvh w-full overflow-hidden"
+      className="scroll-section scroll-section-footer relative h-dvh w-full overflow-hidden"
     >
       <div className="shader-layer-background shader-layer-footer" aria-hidden="true">
         <UnicornScene
@@ -54,7 +54,7 @@ export function FooterSection() {
         </div>
       </div>
 
-      <div className="flex md:h-1/3 flex-col justify-start gap-6 px-8 py-12 md:gap-24 md:px-20">
+      <div className="flex md:h-1/3 flex-col gap-6 px-8 py-12 md:gap-24 md:px-20">
         <nav className="footer-contact-nav" aria-label="Contato">
           <h3 className="footer-contact-title text-novare-white-80 font-(family-name:--font-poppins) text-xl md:text-3xl leading-6 font-medium md:text-right">
             Contato
@@ -96,8 +96,8 @@ export function FooterSection() {
         </nav>
       </div>
 
-      <div className="footer-links-grid flex md:h-1/3 shrink-0 items-end justify-center mt-auto md:px-10">
-        <div className="footer-copyright relative z-10 flex flex-col md:gap-8 md:p-20">
+      <div className="footer-links-grid flex md:h-1/3 shrink-0 items-end justify-center md:justify-start mt-auto">
+        <div className="footer-copyright relative z-10 flex flex-col md:gap-8 md:px-24 md:py-8">
           <LogoNovare className="w-64 text-white/70 hidden md:flex" />
           <p className="text-novare-dark font-(family-name:--font-inter) text-xs md:text-base font-semibold">
             © 2026 Novare Vision.{" "}

@@ -105,13 +105,6 @@ body {
   padding: 24px;
 }
 
-@media (min-width: 768px) {
-  .service-card {
-    height: 280px;
-    padding: 0;
-  }
-}
-
 .service-card-shadow {
   box-shadow:
     3px 3px 4px -1px rgba(0, 0, 0, 0.35),
@@ -152,13 +145,6 @@ body {
   z-index: 1;
 }
 
-@media (min-width: 768px) {
-  .service-card::before {
-    width: 105px;
-    height: 105px;
-  }
-}
-
 .service-card-curves {
   position: absolute;
   top: -1px;
@@ -193,4 +179,24 @@ body {
   box-shadow:
     4px -2px 4px -3px rgba(0, 0, 0, 0.35),
     10px -10px 0 5px var(--bg-secao);
+}
+
+@media (min-width: 768px) {
+  .service-card {
+    height: 280px;
+  }
+
+  .service-card::before {
+    width: 105px;
+    height: 105px;
+  }
+
+  .service-card-curves::before {
+    left: -26px;
+  }
+
+  .service-card-curves::after {
+    bottom: -25px;
+  }
+
 }
