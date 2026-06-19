@@ -1,14 +1,39 @@
 'use client'
 
+import gsap from "gsap";
+import { useRef } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 import { ArrowIcon } from "@/assets/icons/Icons";
 import { services, values } from "@/data/site-content";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stage } from "@react-three/drei";
 import { LogoNovare3d } from "./LogoNovare3d";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function ServicesValuesSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  useGSAP(() => {
+    gsap.to(".horizontal-scroll-track", {
+      x: '-50%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        pin: true,
+        markers: true,
+        start: "top top",
+        end: () => `+=${containerRef.current?.offsetWidth ?? 1000}`,
+        scrub: 1,
+      }
+    });
+
+  }, { scope: containerRef });
+
   return (
-    <section id="sobre" className="scroll-section scroll-section-services-values relative w-full">
+    <section id="sobre" ref={containerRef} className="scroll-section scroll-section-services-values relative w-full">
       <div className="scroll-pin-wrapper relative min-h-screen w-full">
         <div className="horizontal-scroll-track flex w-[200vw]">
           {/* Fase 1 — Nossos Serviços */}
