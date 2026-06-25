@@ -63,12 +63,12 @@ export const services: ServiceItem[] = [
 ];
 
 export const values: ValueItem[] = [
-  { letter: "N", word: "Navigation" },
-  { letter: "O", word: "Organization" },
-  { letter: "V", word: "Velocity" },
-  { letter: "A", word: "Analytics" },
-  { letter: "R", word: "Resilience" },
-  { letter: "E", word: "Excellence" },
+  { letter: "N", word: "Navegação" },
+  { letter: "O", word: "Organização" },
+  { letter: "V", word: "Velocidade" },
+  { letter: "A", word: "Análise" },
+  { letter: "R", word: "Resiliência" },
+  { letter: "E", word: "Excelência" },
 ];
 
 export const faqItems: FaqItem[] = [
