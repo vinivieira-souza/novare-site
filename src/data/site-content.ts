@@ -35,28 +35,28 @@ export const services: ServiceItem[] = [
   {
     title: "Landing Pages",
     description:
-      "Uma página exclusiva desenhada estrategicamente para transformar visitantes em clientes reais em poucos cliques. Criamos uma estrutura com foco total em um único objetivo: eliminar distrações para acelerar suas vendas ou captação de leads.",
+      "Criamos uma página exclusiva desenhada estrategicamente para transformar visitantes curiosos em clientes reais com poucos cliques.",
     icon: TemplateLandingpageIcon,
     iconBgClass: "bg-novare-icon-blue/70",
   },
   {
     title: "Instagram Profissional",
     description:
-      "Transformamos o seu perfil de uma simples rede social em uma poderosa ferramenta de atração e retenção de público. Através de um planejamento estratégico, alinhamos a comunicação da sua marca com os desejos da sua audiência para gerar identificação imediata.",
+      "Transformamos o seu perfil de uma simples rede social em uma poderosa ferramenta de atração e retenção de público, através de um planejamento estratégico.",
     icon: InstagramIcon,
     iconBgClass: "bg-novare-icon-purple/70",
   },
   {
     title: "Sites Institucionais",
     description:
-      "A presença digital que a sua marca precisa para transmitir total credibilidade, profissionalismo e autoridade no mercado. Desenvolvemos uma estrutura completa para organizar a história da sua empresa, seus valores e todas as suas soluções de forma clara e moderna.",
+      "Desenvolvemos uma estrutura para trazer a presença digital que a sua marca precisa, transmitindo total credibilidade, profissionalismo e autoridade no mercado.",
     icon: BuildingIcon,
     iconBgClass: "bg-novare-icon-blue/70",
   },
   {
     title: "Conteúdo & Design",
     description:
-      "Mais do que apenas imagens bonitas, produzimos conteúdos visuais e textuais que refletem a essência e os valores do seu negócio. Cada publicação é planejada para prender a atenção do público no feed, educar o mercado e gerar desejo de compra nos seus seguidores.",
+      "Cada publicação é planejada para prender a atenção do público no feed. Produzimos conteúdos visuais e textuais que refletem a essência e os valores do seu negócio.",
     icon: PaletteIcon,
     iconBgClass: "bg-novare-icon-purple/70",
   },
