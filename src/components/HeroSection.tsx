@@ -6,7 +6,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="scroll-section scroll-section-hero relative z-0 min-h-dvh w-full overflow-hidden"
+      className="scroll-section scroll-section-hero relative md:z-20 min-h-dvh w-full overflow-hidden"
     >
       <div className="hero-visual-wrapper relative flex h-full min-h-dvh w-full flex-col">
         <div
@@ -29,7 +29,8 @@ export function HeroSection() {
           </a>
 
           <a
-            href="#"
+            href="https://www.instagram.com/novare.vision/"
+            target='_blank' rel='noopener noreferrer'
             className="hero-instagram-cta glass-button bg-novare-glass flex h-9 items-center gap-2.5 rounded-lg px-4 transition-all duration-300 active:scale-95 md:hover:scale-105"
           >
             <InstagramIcon className="text-novare-zinc-light size-3 md:size-[15]" />
@@ -60,7 +61,8 @@ export function HeroSection() {
           </p>
 
           <a
-            href="#contato"
+            href="https://wa.link/id0p7m"
+            target='_blank' rel='noopener noreferrer'
             className="hero-cta-button primary-button bg-novare-white-80 mt-16 inline-flex h-11 items-center gap-3 rounded-lg pr-1 pl-4 transition-all duration-300 active:scale-95 md:mt-[92px] md:h-[52px] md:pr-1.5 md:pl-8 md:hover:scale-105 md:hover:brightness-90"
           >
             <span className="text-novare-text-dark font-(family-name:--font-poppins) text-base font-semibold">

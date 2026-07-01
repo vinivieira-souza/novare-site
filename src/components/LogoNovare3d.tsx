@@ -25,7 +25,7 @@ export function LogoNovare3d({ rotationState }: LogoProps) {
   useEffect(() => {
     const escutarResize = () => {
       if (window.innerWidth < 768) {
-        setScale(10.0);
+        setScale(15.0);
       } else {
         setScale(20.0);
       }

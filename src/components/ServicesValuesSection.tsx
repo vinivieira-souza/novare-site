@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import UnicornScene from 'unicornstudio-react/next';
 
-import { ArrowIcon } from '@/assets/icons/Icons';
+import { ArrowIcon, NovareBelt } from '@/assets/icons/Icons';
 import { services, values } from '@/data/site-content';
 import { Canvas } from '@react-three/fiber';
 import { LogoNovare3d } from './LogoNovare3d';
@@ -17,87 +17,130 @@ export function ServicesValuesSection() {
   const logoRotationObj = useRef({ y: 0 });
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.scroll-section-services-values',
-        pin: true,
-        scrub: 1,
-        start: 'top top',
-        end: () => {
-          const section = document.querySelector('.scroll-section-services-values');
-          const sectionWidth = section ? (section as HTMLElement).offsetWidth : window.innerWidth;
-          return `+=${sectionWidth + 800}`;
+    const mm = gsap.matchMedia();
+    mm.add('(min-width: 768px)', () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.scroll-section-services-values',
+          pin: true,
+          scrub: 1,
+          start: 'top top',
+          end: () => {
+            const section = document.querySelector('.scroll-section-services-values');
+            const sectionWidth = section ? (section as HTMLElement).offsetWidth : window.innerWidth;
+            return `+=${sectionWidth}`;
+          },
         },
-      },
-    });
+      });
 
-    tl.to('.hero-visual-wrapper', {
-      opacity: 0,
-      duration: 1,
-    });
+      tl.to('.hero-visual-wrapper', {
+        opacity: 0,
+        duration: 1,
+      });
 
-    tl.to(
-      '.services-panel-inner',
-      {
-        rotateX: 0,
-        top: 0,
-        borderRadius: 0,
-        scale: 1,
-        duration: 2,
-        onComplete: () => {
-          window.dispatchEvent(new Event('resize'));
+      tl.to(
+        '.services-panel-inner',
+        {
+          rotateX: 0,
+          top: 0,
+          borderRadius: 0,
+          scale: 1,
+          duration: 2,
+          onComplete: () => {
+            window.dispatchEvent(new Event('resize'));
+          },
+          onReverseComplete: () => {
+            window.dispatchEvent(new Event('resize'));
+          },
         },
-        onReverseComplete: () => {
-          window.dispatchEvent(new Event('resize'));
+        '<'
+      );
+
+      tl.to({}, { duration: 0.5 });
+
+      tl.to('.services-carousel-wrapper', {
+        y: () => {
+          const wrapper = document.querySelector('.services-carousel-wrapper');
+          const container = document.querySelector('.services-trigger-container');
+          return container && wrapper ? -(wrapper.clientHeight - container.clientHeight) : 0;
         },
-      },
-      '<'
-    );
-
-    tl.to({}, { duration: 0.5 });
-
-    tl.to('.services-carousel-wrapper', {
-      y: () => {
-        const wrapper = document.querySelector('.services-carousel-wrapper');
-        const container = document.querySelector('.services-trigger-container');
-        return container && wrapper ? -(wrapper.clientHeight - container.clientHeight) : 0;
-      },
-      ease: 'none',
-      duration: 3,
-    });
-    tl.to(
-      logoRotationObj.current,
-      {
-        y: Math.PI * 2,
+        ease: 'none',
         duration: 3,
-        ease: 'power1.inOut',
-      },
-      '<'
-    );
+      });
+      tl.to(
+        logoRotationObj.current,
+        {
+          y: Math.PI * 2,
+          duration: 3,
+          ease: 'power1.inOut',
+        },
+        '<'
+      );
 
-    tl.to({}, { duration: 0.5 });
+      tl.to({}, { duration: 0.5 });
 
-    tl.to('.horizontal-scroll-track', {
-      x: '-50%',
-      ease: 'none',
-      duration: 2,
+      tl.to('.horizontal-scroll-track', {
+        x: '-50%',
+        ease: 'none',
+        duration: 2,
+      });
+
+      tl.to({}, { duration: 0.5 });
     });
 
-    tl.to({}, { duration: 0.5 });
+    mm.add('(max-width: 767px)', () => {
+      gsap.to('.hero-visual-wrapper', {
+        yPercent: 100,
+        scale: 0.8,
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-section-services-values',
+          scrub: true,
+          start: 'top bottom',
+          end: 'top top',
+        },
+      });
+
+      gsap.to('.services-panel-inner', {
+        borderRadius: 0,
+        scrollTrigger: {
+          trigger: '.scroll-section-services-values',
+          scrub: true,
+          start: 'top bottom',
+          end: 'top top',
+        },
+      });
+
+      gsap.to(logoRotationObj.current, {
+        y: Math.PI * 2,
+        ease: 'power1.inOut',
+        repeat: -1,
+        repeatDelay: 1,
+        duration: 2,
+      });
+
+      gsap.to('.novare-belt', {
+        xPercent: -100,
+        ease: 'none',
+        repeat: -1,
+        duration: 4,
+      });
+    });
   });
 
   return (
     <section
       id="sobre"
-      className="scroll-section scroll-section-services-values relative z-10 mt-[-100dvh] w-full transform-3d"
+      className="scroll-section scroll-section-services-values relative w-full md:z-10 md:mt-[-100dvh] md:transform-3d"
     >
       <div className="scroll-pin-wrapper relative min-h-screen w-full">
-        <div className="horizontal-scroll-track flex w-[200vw]">
+        <div className="horizontal-scroll-track flex flex-col md:w-[200vw] md:flex-row md:items-stretch">
           {/* Fase 1 — Nossos Serviços */}
-          <div className="services-panel services-section-shadow relative w-screen shrink-0 perspective-[2000px] perspective-origin-bottom md:h-screen md:overflow-hidden">
-            <div className="services-panel-inner bg-novare-purple-light absolute top-1/2 right-0 left-0 mx-auto flex max-w-dvw scale-50 -rotate-x-90 flex-col rounded-4xl px-10 md:h-full md:flex-row">
+          <div className="services-panel relative w-screen shrink-0 md:h-screen md:overflow-hidden md:perspective-[2000px] md:perspective-origin-bottom">
+            <div className="services-panel-inner bg-novare-purple-light flex max-w-dvw flex-col rounded-4xl px-10 md:absolute md:top-1/2 md:right-0 md:left-0 md:mx-auto md:h-full md:scale-50 md:-rotate-x-90 md:flex-row">
               {/* Coluna esquerda — Logo 3D + CTA */}
-              <div className="services-left-column order-last flex w-full flex-col items-center justify-center gap-4 py-8 md:order-first md:w-1/2 md:gap-10 md:pt-16 md:pb-0">
+              <div className="services-left-column order-last flex w-full flex-col items-center justify-center gap-4 pt-8 pb-16 md:order-first md:w-1/2 md:gap-10 md:pt-16 md:pb-0">
                 <div
                   className="threejs-logo-canvas-container relative h-64 w-full max-w-[671px] md:h-96"
                   aria-hidden="true"
@@ -118,7 +161,8 @@ export function ServicesValuesSection() {
                 </p>
 
                 <a
-                  href="#contato"
+                  href="https://wa.link/y32eft"
+                  target='_blank' rel='noopener noreferrer'
                   className="services-contact-button primary-button bg-novare-dark inline-flex h-11 items-center gap-3 rounded-lg pr-1.5 pl-6 transition-all duration-300 active:scale-95 md:h-14 md:pr-2 md:pl-[34px] md:hover:scale-105 md:hover:brightness-110"
                 >
                   <span className="text-novare-purple-light font-(family-name:--font-poppins) text-base font-semibold">
@@ -135,7 +179,7 @@ export function ServicesValuesSection() {
                 <div className="services-trigger-container relative mt-10 h-auto overflow-visible md:mt-5 md:h-[820px] md:overflow-hidden">
                   <div className="service-card-fade-top hidden md:block" aria-hidden="true" />
                   <div className="services-carousel-wrapper flex flex-col">
-                    <h2 className="services-section-title text-novare-text-dark font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-[0.0278em] md:mt-5 md:pb-10 md:text-4xl">
+                    <h2 className="services-section-title text-novare-text-dark pb-10 font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-[0.0278em] md:mt-5 md:text-4xl">
                       Nossos Serviços
                     </h2>
                     <div className="services-cards-stack flex flex-col gap-[45px]">
@@ -163,7 +207,7 @@ export function ServicesValuesSection() {
                                 {service.title}
                               </h3>
 
-                              <p className="service-card-description text-novare-text-body pt-6 font-(family-name:--font-poppins) text-sm leading-5 md:px-1 md:pt-10 md:text-lg">
+                              <p className="service-card-description text-novare-text-body pt-8 font-(family-name:--font-poppins) text-sm leading-5 md:px-1 md:pt-10 md:text-lg">
                                 {service.description}
                               </p>
                             </div>
@@ -178,16 +222,24 @@ export function ServicesValuesSection() {
             </div>
           </div>
 
+          {/* Cinturão Divisor */}
+          <div className="novare-belt-divider bg-novare-purple-light overflow-hidden">
+            <div className="novare-belt flex whitespace-nowrap">
+              <NovareBelt className="text-novare-dark/80 w-dvw shrink-0 md:hidden" />
+              <NovareBelt className="text-novare-dark/80 w-dvw shrink-0 md:hidden" />
+            </div>
+          </div>
+
           {/* Fase 2 — Nossos Valores */}
-          <div className="section-valores-target bg-novare-purple-light relative h-screen w-screen shrink-0 overflow-hidden">
-            <div className="valores-panel-inner relative mx-auto flex h-full max-w-[1920px] items-center justify-center px-10">
+          <div className="section-valores-target bg-novare-purple-light relative h-auto w-screen shrink-0 overflow-hidden py-16 md:h-dvh">
+            <div className="valores-panel-inner relative mx-auto flex h-full max-w-[1920px] flex-col items-center justify-center px-10 md:flex-row">
               {/* Quem Somos / Como Surgiu — esquerda */}
-              <div className="valores-about-left absolute bottom-[166px] left-[165px] max-w-[385px]">
+              <div className="valores-about-left md:absolute md:bottom-[106px] md:left-[165px] md:max-w-[385px]">
                 <div className="valores-quem-somos mb-9">
-                  <h3 className="valores-quem-somos-title text-novare-text-dark font-(family-name:--font-montserrat) text-[28px] leading-7 font-semibold">
+                  <h3 className="valores-quem-somos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
                     Quem Somos
                   </h3>
-                  <p className="valores-quem-somos-text text-novare-text-muted mt-[18px] font-(family-name:--font-poppins) text-lg leading-[22.75px]">
+                  <p className="valores-quem-somos-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm md:mt-5 leading-[22.75px] md:text-lg">
                     A Novare Vision é uma agência digital focada em transformar ideias em presença
                     digital. Unindo engenharia de software, design e marketing, desenvolvemos
                     ecossistemas digitais sob medida com identidades visuais marcantes.
@@ -200,10 +252,10 @@ export function ServicesValuesSection() {
                 </div>
 
                 <div className="valores-como-surgiu">
-                  <h3 className="valores-como-surgiu-title text-novare-text-dark font-(family-name:--font-montserrat) text-[28px] leading-5 font-semibold">
+                  <h3 className="valores-como-surgiu-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
                     Como Surgiu
                   </h3>
-                  <p className="valores-como-surgiu-text text-novare-text-muted mt-5 font-(family-name:--font-poppins) text-lg leading-[22.75px]">
+                  <p className="valores-como-surgiu-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm md:mt-5 leading-[22.75px] md:text-lg">
                     A Novare foi idealizada pelos sócios Vinícius Vieira e Tom Caio. O projeto
                     ganhou vida a partir de uma percepção de mercado:
                     <span className="font-semibold text-black/65">
@@ -219,7 +271,7 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Grid NOVARE — centro */}
-              <div className="valores-grid-panel values-panel-shadow relative h-[720px] w-[580px] overflow-hidden rounded-2xl">
+              <div className="valores-grid-panel values-panel-shadow relative my-12 h-106 w-70 overflow-hidden rounded-xl md:h-[720px] md:w-[580px] md:rounded-2xl">
                 <div
                   className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
                   aria-hidden="true"
@@ -234,21 +286,21 @@ export function ServicesValuesSection() {
                   />
                 </div>
 
-                <h3 className="valores-section-title text-novare-white-90 relative z-10 pt-10 text-center font-(family-name:--font-montserrat) text-[32px] leading-7 font-semibold">
+                <h3 className="valores-section-title text-novare-white-90 relative z-10 pt-8 text-center font-(family-name:--font-montserrat) text-xl font-semibold md:text-[32px]">
                   Nossos Valores
                 </h3>
 
-                <div className="valores-grid relative z-10 mt-10 grid w-full grid-cols-[150px_150px] justify-between gap-y-8 px-16">
+                <div className="valores-grid relative z-10 grid w-full grid-cols-[88px_88px] justify-between gap-y-4 px-8 py-8 md:grid-cols-[150px_150px] md:gap-y-8 md:px-16">
                   {values.map((value, index) => (
                     <div
                       key={value.letter}
-                      className={`valor-card valor-card-${value.letter.toLowerCase()} value-card-shadow flex h-[150px] w-[150px] flex-col items-center justify-center rounded-[15px] bg-[rgba(0,0,0,0.2)]`}
+                      className={`valor-card valor-card-${value.letter.toLowerCase()} value-card-shadow flex h-22 w-22 flex-col items-center justify-center rounded-2xl bg-[rgba(0,0,0,0.2)] md:h-[150px] md:w-[150px]`}
                       data-index={index}
                     >
-                      <span className="valor-card-letter font-(family-name:--font-jetbrains-mono) text-5xl leading-[22.75px] font-bold text-white">
+                      <span className="valor-card-letter font-(family-name:--font-jetbrains-mono) text-2xl font-bold text-white md:text-5xl">
                         {value.letter}
                       </span>
-                      <span className="valor-card-word mt-7 font-(family-name:--font-poppins) text-xl leading-[22.75px] font-medium text-white">
+                      <span className="valor-card-word font-(family-name:--font-poppins) text-xs font-medium text-white md:mt-7 md:text-xl">
                         {value.word}
                       </span>
                     </div>
@@ -257,21 +309,21 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Onde Estamos — direita */}
-              <div className="valores-about-right absolute top-[166px] right-[187px] max-w-[363px]">
+              <div className="valores-about-right md:absolute md:top-[166px] md:right-[187px] md:max-w-[363px]">
                 <div className="valores-onde-estamos mb-9">
-                  <h3 className="valores-onde-estamos-title text-novare-text-dark font-(family-name:--font-montserrat) text-[28px] leading-7 font-semibold">
+                  <h3 className="valores-onde-estamos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
                     Onde Estamos
                   </h3>
-                  <p className="valores-onde-estamos-text text-novare-text-muted mt-[15px] font-(family-name:--font-poppins) text-lg leading-[22.75px]">
+                  <p className="valores-onde-estamos-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] md:mt-5 md:text-lg">
                     Instalados em Cuiabá, Capital de Mato Grosso, trabalhamos com empresas em todo o
                     país, atuando de forma online através de nossas redes sociais.
                   </p>
                 </div>
                 <div className="valores-nossa-missao">
-                  <h3 className="valores-nossa-missao-title text-novare-text-dark font-(family-name:--font-montserrat) text-[28px] leading-7 font-semibold">
+                  <h3 className="valores-nossa-missao-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
                     Nossa Missão
                   </h3>
-                  <p className="valores-nossa-missao-text text-novare-text-muted mt-[15px] font-(family-name:--font-poppins) text-lg leading-[22.75px]">
+                  <p className="valores-nossa-missao-text text-novare-text-muted md:text-lg mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] md:mt-5">
                     Nossa missão é democratizar a tecnologia e o design para empresas que buscam
                     liderar o mercado digital. Mais do que criar sites ou campanhas, existimos para
                     construir pontes entre grandes marcas e seus públicos, gerando impacto real,
