@@ -49,7 +49,7 @@ export function FooterSection() {
           />
         </div>
 
-        <div className="footer-content relative z-10 mx-auto flex max-w-full flex-col px-8 pt-12 md:h-1/3 md:gap-16 md:px-20 md:pt-20 md:pb-14 lg:flex-row lg:justify-between">
+        <div className="footer-content relative z-20 mx-auto flex max-w-full flex-col px-8 pt-12 md:h-1/3 md:gap-16 md:px-20 md:pt-20 md:pb-14 lg:flex-row lg:justify-between">
           <div className="footer-cta-block md:max-w-[1318px]">
             <h2 className="footer-headline text-novare-white-90 font-(family-name:--font-jetbrains-mono) text-5xl leading-[1.05] font-extrabold md:text-[clamp(3rem,8vw,8rem)]">
               VAMOS DESENVOLVER SEU FUTURO?
