@@ -134,7 +134,7 @@ export function ServicesValuesSection() {
       id="sobre"
       className="scroll-section scroll-section-services-values relative w-full md:z-10 md:mt-[-100dvh] md:transform-3d"
     >
-      <div className="scroll-pin-wrapper relative min-h-screen w-full">
+      <div className="scroll-pin-wrapper relative min-h-dvh w-full">
         <div className="horizontal-scroll-track flex flex-col md:w-[200vw] md:flex-row md:items-stretch">
           {/* Fase 1 — Nossos Serviços */}
           <div className="services-panel relative w-screen shrink-0 md:h-screen md:overflow-hidden md:perspective-[2000px] md:perspective-origin-bottom">
@@ -162,7 +162,8 @@ export function ServicesValuesSection() {
 
                 <a
                   href="https://wa.link/y32eft"
-                  target='_blank' rel='noopener noreferrer'
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="services-contact-button primary-button bg-novare-dark inline-flex h-11 items-center gap-3 rounded-lg pr-1.5 pl-6 transition-all duration-300 active:scale-95 md:h-14 md:pr-2 md:pl-[34px] md:hover:scale-105 md:hover:brightness-110"
                 >
                   <span className="text-novare-purple-light font-(family-name:--font-poppins) text-base font-semibold">
@@ -175,11 +176,11 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Coluna direita — Cards de serviços */}
-              <div className="services-right-column relative flex w-full flex-col pt-8 md:w-1/2 md:pl-16">
+              <div className="services-right-column relative flex w-full flex-col items-center justify-center pt-8 md:w-1/2 md:pl-16">
                 <div className="services-trigger-container relative mt-10 h-auto overflow-visible md:mt-5 md:h-[820px] md:overflow-hidden">
                   <div className="service-card-fade-top hidden md:block" aria-hidden="true" />
                   <div className="services-carousel-wrapper flex flex-col">
-                    <h2 className="services-section-title text-novare-text-dark pb-10 font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-[0.0278em] md:mt-5 md:text-4xl">
+                    <h2 className="services-section-title text-novare-text-dark pb-10 font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-[0.0278em] md:mt-5 md:text-3xl lg:text-4xl">
                       Nossos Serviços
                     </h2>
                     <div className="services-cards-stack flex flex-col gap-[45px]">
@@ -202,12 +203,12 @@ export function ServicesValuesSection() {
                               <ComponentIcon className="text-novare-white-90 size-7 md:size-9" />
                             </div>
 
-                            <div className="relative z-10">
-                              <h3 className="service-card-title text-novare-text-dark/80 max-w-[50%] p-1 font-(family-name:--font-poppins) text-xl leading-5 font-medium md:max-w-[90%] md:p-2 md:py-4 md:text-[32px]">
+                            <div className="relative flex flex-col z-10">
+                              <h3 className="service-card-title text-novare-text-dark/80 max-w-[50%] p-1 font-(family-name:--font-poppins) text-xl leading-7 font-medium md:max-w-[70%] md:text-2xl lg:p-2 lg:py-4 lg:text-[32px] lg:*:max-w-[90%]">
                                 {service.title}
                               </h3>
 
-                              <p className="service-card-description text-novare-text-body pt-8 font-(family-name:--font-poppins) text-sm leading-5 md:px-1 md:pt-10 md:text-lg">
+                              <p className="service-card-description text-novare-text-body pt-8 font-(family-name:--font-poppins) text-sm leading-5 md:px-1 md:pt-6 md:text-base lg:pt-10 lg:text-lg">
                                 {service.description}
                               </p>
                             </div>
@@ -232,14 +233,14 @@ export function ServicesValuesSection() {
 
           {/* Fase 2 — Nossos Valores */}
           <div className="section-valores-target bg-novare-purple-light relative h-auto w-screen shrink-0 overflow-hidden py-16 md:h-dvh">
-            <div className="valores-panel-inner relative mx-auto flex h-full max-w-[1920px] flex-col items-center justify-center px-10 md:flex-row">
+            <div className="valores-panel-inner relative mx-auto flex h-full max-w-[1920px] flex-col items-center justify-center gap-8 px-6 md:flex-row md:px-10 lg:gap-12 lg:px-20">
               {/* Quem Somos / Como Surgiu — esquerda */}
-              <div className="valores-about-left md:absolute md:bottom-[106px] md:left-[165px] md:max-w-[385px]">
+              <div className="valores-about-left w-full text-left sm:max-w-[600px] lg:max-w-[420px] lg:flex-1">
                 <div className="valores-quem-somos mb-9">
-                  <h3 className="valores-quem-somos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
+                  <h3 className="valores-quem-somos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold lg:text-[28px]">
                     Quem Somos
                   </h3>
-                  <p className="valores-quem-somos-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm md:mt-5 leading-[22.75px] md:text-lg">
+                  <p className="valores-quem-somos-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] lg:mt-5 lg:text-lg">
                     A Novare Vision é uma agência digital focada em transformar ideias em presença
                     digital. Unindo engenharia de software, design e marketing, desenvolvemos
                     ecossistemas digitais sob medida com identidades visuais marcantes.
@@ -252,10 +253,10 @@ export function ServicesValuesSection() {
                 </div>
 
                 <div className="valores-como-surgiu">
-                  <h3 className="valores-como-surgiu-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
+                  <h3 className="valores-como-surgiu-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold lg:text-[28px]">
                     Como Surgiu
                   </h3>
-                  <p className="valores-como-surgiu-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm md:mt-5 leading-[22.75px] md:text-lg">
+                  <p className="valores-como-surgiu-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] lg:mt-5 lg:text-lg">
                     A Novare foi idealizada pelos sócios Vinícius Vieira e Tom Caio. O projeto
                     ganhou vida a partir de uma percepção de mercado:
                     <span className="font-semibold text-black/65">
@@ -271,7 +272,7 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Grid NOVARE — centro */}
-              <div className="valores-grid-panel values-panel-shadow relative my-12 h-106 w-70 overflow-hidden rounded-xl md:h-[720px] md:w-[580px] md:rounded-2xl">
+              <div className="valores-grid-panel values-panel-shadow relative my-6 h-106 w-70 shrink-0 overflow-hidden rounded-2xl 2xl:h-[720px] 2xl:w-[580px]">
                 <div
                   className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
                   aria-hidden="true"
@@ -286,21 +287,21 @@ export function ServicesValuesSection() {
                   />
                 </div>
 
-                <h3 className="valores-section-title text-novare-white-90 relative z-10 pt-8 text-center font-(family-name:--font-montserrat) text-xl font-semibold md:text-[32px]">
+                <h3 className="valores-section-title text-novare-white-90 relative z-10 pt-8 text-center font-(family-name:--font-montserrat) text-xl font-semibold 2xl:text-[32px]">
                   Nossos Valores
                 </h3>
 
-                <div className="valores-grid relative z-10 grid w-full grid-cols-[88px_88px] justify-between gap-y-4 px-8 py-8 md:grid-cols-[150px_150px] md:gap-y-8 md:px-16">
+                <div className="valores-grid relative z-10 grid w-full grid-cols-[88px_88px] justify-between gap-y-4 px-8 py-8 2xl:grid-cols-[150px_150px] 2xl:gap-y-8 2xl:px-16">
                   {values.map((value, index) => (
                     <div
                       key={value.letter}
-                      className={`valor-card valor-card-${value.letter.toLowerCase()} value-card-shadow flex h-22 w-22 flex-col items-center justify-center rounded-2xl bg-[rgba(0,0,0,0.2)] md:h-[150px] md:w-[150px]`}
+                      className={`valor-card valor-card-${value.letter.toLowerCase()} value-card-shadow flex h-22 w-22 flex-col items-center justify-center rounded-2xl bg-[rgba(0,0,0,0.2)] 2xl:h-[150px] 2xl:w-[150px]`}
                       data-index={index}
                     >
-                      <span className="valor-card-letter font-(family-name:--font-jetbrains-mono) text-2xl font-bold text-white md:text-5xl">
+                      <span className="valor-card-letter font-(family-name:--font-jetbrains-mono) text-2xl font-bold text-white 2xl:text-5xl">
                         {value.letter}
                       </span>
-                      <span className="valor-card-word font-(family-name:--font-poppins) text-xs font-medium text-white md:mt-7 md:text-xl">
+                      <span className="valor-card-word font-(family-name:--font-poppins) text-xs font-medium text-white 2xl:mt-7 2xl:text-xl">
                         {value.word}
                       </span>
                     </div>
@@ -309,21 +310,21 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Onde Estamos — direita */}
-              <div className="valores-about-right md:absolute md:top-[166px] md:right-[187px] md:max-w-[363px]">
+              <div className="valores-about-right w-full text-left sm:max-w-[600px] lg:max-w-[420px] lg:flex-1">
                 <div className="valores-onde-estamos mb-9">
-                  <h3 className="valores-onde-estamos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
+                  <h3 className="valores-onde-estamos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold lg:text-[28px]">
                     Onde Estamos
                   </h3>
-                  <p className="valores-onde-estamos-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] md:mt-5 md:text-lg">
+                  <p className="valores-onde-estamos-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] lg:mt-5 lg:text-lg">
                     Instalados em Cuiabá, Capital de Mato Grosso, trabalhamos com empresas em todo o
                     país, atuando de forma online através de nossas redes sociais.
                   </p>
                 </div>
                 <div className="valores-nossa-missao">
-                  <h3 className="valores-nossa-missao-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold md:text-[28px]">
+                  <h3 className="valores-nossa-missao-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold lg:text-[28px]">
                     Nossa Missão
                   </h3>
-                  <p className="valores-nossa-missao-text text-novare-text-muted md:text-lg mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] md:mt-5">
+                  <p className="valores-nossa-missao-text text-novare-text-muted mt-2 font-(family-name:--font-poppins) text-sm leading-[22.75px] lg:mt-5 lg:text-lg">
                     Nossa missão é democratizar a tecnologia e o design para empresas que buscam
                     liderar o mercado digital. Mais do que criar sites ou campanhas, existimos para
                     construir pontes entre grandes marcas e seus públicos, gerando impacto real,
