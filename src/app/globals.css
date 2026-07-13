@@ -111,7 +111,7 @@ body {
 .primary-button {
   box-shadow:
     2px 4px 6px 0px rgba(0, 0, 0, 0.2),
-    inset 2px 2px 3px 0px rgba(228, 228, 231, 0.8);
+    inset 2px 2px 4px 0px rgba(228, 228, 231, 0.5);
 }
 
 .value-card-shadow {
@@ -264,4 +264,21 @@ body {
     bottom: -25px;
   }
 
+}
+
+.hello-svg {
+  color: rgba(12, 1, 18);
+  stroke: rgba(12, 1, 18);
+  stroke-dasharray: 300;
+  stroke-dashoffset: 0;
+  animation: complete-draw 2s ease;
+}
+
+@keyframes complete-draw {
+  0%{
+    stroke-dashoffset: 300;
+  };
+  50%{
+    color: rgba(3, 14, 32, 0.2);
+  }
 }

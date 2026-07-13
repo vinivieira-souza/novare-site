@@ -1,17 +1,26 @@
-import { FaqSection } from "@/components/FaqSection";
-import { FooterSection } from "@/components/FooterSection";
-import { HeroSection } from "@/components/HeroSection";
-import { PortfolioSection } from "@/components/PortfolioSection";
-import { ServicesValuesSection } from "@/components/ServicesValuesSection";
+'use client';
+
+import { FaqSection } from '@/components/FaqSection';
+import { FooterSection } from '@/components/FooterSection';
+import { HamburguerMenu } from '@/components/HamburguerMenu';
+import { HeroSection } from '@/components/HeroSection';
+import { PortfolioSection } from '@/components/PortfolioSection';
+import { ServicesValuesSection } from '@/components/ServicesValuesSection';
+import { useState } from 'react';
 
 export default function Home() {
+  const [ isMenuOpen, setIsMenuOpen ] = useState(false);
+
   return (
-    <main className="relative w-full overflow-x-hidden">
-      <HeroSection />
-      <ServicesValuesSection />
-      <PortfolioSection />
-      <FaqSection />
-      <FooterSection />
-    </main>
+    <>
+      <HamburguerMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <main className="relative w-full overflow-x-hidden">
+        <HeroSection onOpenMenu={() => setIsMenuOpen(true)} />
+        <ServicesValuesSection />
+        <PortfolioSection />
+        <FaqSection />
+        <FooterSection />
+      </main>
+    </>
   );
 }

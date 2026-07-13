@@ -1,8 +1,12 @@
 import { UnicornScene } from 'unicornstudio-react/next';
 
-import { ArrowIcon, InstagramIcon, LogoNovare, ShiningIcon } from '@/assets/icons/Icons';
+import { ArrowIcon, HamburguerMenuIcon, InstagramIcon, LogoNovare, ShiningIcon } from '@/assets/icons/Icons';
 
-export function HeroSection() {
+interface HeroProps {
+  onOpenMenu: () => void;
+}
+
+export function HeroSection({ onOpenMenu }: HeroProps) {
   return (
     <section
       id="inicio"
@@ -23,21 +27,18 @@ export function HeroSection() {
           />
         </div>
 
-        <header className="hero-header relative z-10 flex h-[70px] items-center justify-between px-5 md:px-10">
+        <header className="hero-header relative z-10 flex h-[70px] items-end justify-between px-5 md:px-10">
           <a href="#inicio" className="hero-logo-link shrink-0">
             <LogoNovare className="hero-logo h-6 text-white/75 transition-all duration-300 hover:text-white md:h-12" />
           </a>
 
-          <a
-            href="https://www.instagram.com/novare.vision/"
-            target='_blank' rel='noopener noreferrer'
-            className="hero-instagram-cta glass-button bg-novare-glass flex h-9 items-center gap-2.5 rounded-lg px-4 transition-all duration-300 active:scale-95 md:hover:scale-105"
+          <button
+            onClick={onOpenMenu}
+            className="hero-hamburger-cta flex size-10 transition-all duration-700 active:scale-90 md:hover:rotate-y-180 cursor-pointer"
+            aria-label="Abrir menu"
           >
-            <InstagramIcon className="text-novare-zinc-light size-3 md:size-[15]" />
-            <span className="text-novare-zinc-light font-(family-name:--font-poppins) text-xs font-medium md:text-sm">
-              Acompanhe no Instagram
-            </span>
-          </a>
+            <HamburguerMenuIcon className='size-full stroke-4' />
+          </button>
         </header>
 
         <div className="hero-content relative z-10 mx-auto flex max-w-[1375px] flex-col items-center px-6 py-16 text-center md:px-10 md:pt-20 md:pb-24">
