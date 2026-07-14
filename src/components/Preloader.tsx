@@ -24,7 +24,10 @@ export function Preloader({ onComplete }: PreloaderProps) {
     () => {
       if (progress >= 100) {
         const tl = gsap.timeline({
-          onComplete: onComplete,
+          onComplete: () => {
+            onComplete();
+            window.dispatchEvent(new Event('resize'));
+          }
         });
 
         tl.to('.preloader-ui-elements', {

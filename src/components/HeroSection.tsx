@@ -1,6 +1,12 @@
 import { UnicornScene } from 'unicornstudio-react/next';
 
-import { ArrowIcon, HamburguerMenuIcon, InstagramIcon, LogoNovare, ShiningIcon } from '@/assets/icons/Icons';
+import {
+  ArrowIcon,
+  HamburguerMenuIcon,
+  LogoNovare,
+  ShiningIcon,
+} from '@/assets/icons/Icons';
+import { useEffect } from 'react';
 
 interface HeroProps {
   onOpenMenu: () => void;
@@ -10,7 +16,7 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
   return (
     <section
       id="inicio"
-      className="scroll-section scroll-section-hero relative md:z-20 min-h-dvh w-full overflow-hidden"
+      className="scroll-section scroll-section-hero relative min-h-dvh w-full overflow-hidden md:z-20"
     >
       <div className="hero-visual-wrapper relative flex h-full min-h-dvh w-full flex-col">
         <div
@@ -29,15 +35,15 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
 
         <header className="hero-header relative z-10 flex h-[70px] items-end justify-between px-5 md:px-10">
           <a href="#inicio" className="hero-logo-link shrink-0">
-            <LogoNovare className="hero-logo target-hero-logo h-6 text-novare-white-80 transition-all duration-300 hover:text-white md:h-12" />
+            <LogoNovare className="hero-logo target-hero-logo text-novare-white-80 h-6 transition-all duration-300 hover:text-white md:h-12" />
           </a>
 
           <button
             onClick={onOpenMenu}
-            className="hero-hamburger-cta text-novare-white-80 flex size-10 transition-all duration-700 active:scale-90 md:hover:rotate-y-180 md:hover:text-white cursor-pointer"
+            className="hero-hamburger-cta text-novare-white-80 flex size-10 cursor-pointer transition-all duration-700 active:scale-90 md:hover:rotate-y-180 md:hover:text-white"
             aria-label="Abrir menu"
           >
-            <HamburguerMenuIcon className='size-full stroke-4' />
+            <HamburguerMenuIcon className="size-full stroke-4" />
           </button>
         </header>
 
@@ -63,7 +69,8 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
 
           <a
             href="https://wa.link/id0p7m"
-            target='_blank' rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
             className="hero-cta-button primary-button bg-novare-white-80 mt-16 inline-flex h-11 items-center gap-3 rounded-lg pr-1 pl-4 transition-all duration-300 active:scale-95 md:mt-[92px] md:h-[52px] md:pr-1.5 md:pl-8 md:hover:scale-105 md:hover:brightness-90"
           >
             <span className="text-novare-text-dark font-(family-name:--font-poppins) text-base font-semibold">
