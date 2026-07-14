@@ -74,23 +74,23 @@ export function HamburguerMenu({ isOpen, onClose }: HamburguerMenuProps) {
         className="hamb-menu bg-novare-purple-light relative z-10 h-dvh w-full shadow-2xl md:w-[480px]"
       >
         <div className="hamb-menu-wrapper flex h-full flex-col">
-          <div className="flex justify-end px-10 pt-[38px]">
+          <div className="flex justify-end px-5 md:px-10 pt-[38px]">
             <button
               onClick={handleClose}
               aria-label="Fechar Menu"
-              className="text-novare-dark size-8 cursor-pointer transition-transform duration-500 hover:rotate-90 active:scale-90"
+              className="text-novare-dark size-8 cursor-pointer transition-transform duration-500 md:hover:rotate-90 active:scale-90"
             >
               <CloseIcon className="close-btn-svg size-full stroke-4" />
             </button>
           </div>
-          <div className="hamb-menu-content flex flex-col items-center justify-center mt-32">
-            <HelloTextSVG className="hello-svg w-64" />
-            <p className="text-novare-dark font-(family-name:--font-poppins) text-lg font-medium pt-8">
+          <div className="hamb-menu-content flex flex-col items-center justify-center mt-20 md:mt-32">
+            <HelloTextSVG className="hello-svg w-48 md:w-64" />
+            <p className="text-novare-dark font-(family-name:--font-poppins) text-lg font-medium pt-4 md:pt-8">
               Como posso te ajudar hoje?
             </p>
           </div>
-          <div className="hamb-menu-links flex flex-col items-center mt-32">
-            <div className="flex w-[280px] flex-col gap-8">
+          <div className="hamb-menu-links flex flex-col items-center mt-20 md:mt-32">
+            <div className="flex w-[280px] flex-col gap-6 md:gap-8">
               <a
                 href="https://wa.link/id0p7m"
                 target="_blank"
@@ -100,7 +100,7 @@ export function HamburguerMenu({ isOpen, onClose }: HamburguerMenuProps) {
                 <span className="text-novare-purple-light shrink-0 font-(family-name:--font-poppins) text-base font-medium">
                   Solicitar Orçamento
                 </span>
-                <span className="bg-novare-purple-light flex z-10 absolute right-[10px] items-center justify-center rounded-full md:size-10 md:group-hover:w-[260px] transition-all duration-500">
+                <span className="bg-novare-purple-light flex z-10 absolute right-[10px] items-center justify-center rounded-full size-10 active:scale-95 md:group-hover:w-[260px] transition-all duration-500">
                   <ArrowIcon className="text-novare-dark size-4" />
                 </span>
               </a>
@@ -113,7 +113,7 @@ export function HamburguerMenu({ isOpen, onClose }: HamburguerMenuProps) {
                 <span className="text-novare-purple-light shrink-0 font-(family-name:--font-poppins) text-base font-medium">
                   Fale Conosco
                 </span>
-                <span className="bg-novare-purple-light flex z-10 absolute right-[10px] items-center justify-center rounded-full md:size-10 md:group-hover:w-[260px] transition-all duration-500">
+                <span className="bg-novare-purple-light flex z-10 absolute right-[10px] items-center justify-center rounded-full size-10 active:scale-95 md:group-hover:w-[260px] transition-all duration-500">
                   <WhatsappIcon className="text-novare-dark size-4" />
                 </span>
               </a>
@@ -126,7 +126,7 @@ export function HamburguerMenu({ isOpen, onClose }: HamburguerMenuProps) {
                 <span className="text-novare-purple-light shrink-0 font-(family-name:--font-poppins) text-base font-medium">
                   Conheça o Trabalho
                 </span>
-                <span className="bg-novare-purple-light flex z-10 absolute right-[10px] items-center justify-center rounded-full md:size-10 md:group-hover:w-[260px] transition-all duration-500">
+                <span className="bg-novare-purple-light flex z-10 absolute right-[10px] items-center justify-center rounded-full size-10 active:scale-95 md:group-hover:w-[260px] transition-all duration-500">
                   <InstagramIcon className="text-novare-dark size-4" />
                 </span>
               </a>

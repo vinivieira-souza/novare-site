@@ -29,12 +29,12 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
 
         <header className="hero-header relative z-10 flex h-[70px] items-end justify-between px-5 md:px-10">
           <a href="#inicio" className="hero-logo-link shrink-0">
-            <LogoNovare className="hero-logo h-6 text-white/75 transition-all duration-300 hover:text-white md:h-12" />
+            <LogoNovare className="hero-logo h-6 text-novare-white-80 transition-all duration-300 hover:text-white md:h-12" />
           </a>
 
           <button
             onClick={onOpenMenu}
-            className="hero-hamburger-cta flex size-10 transition-all duration-700 active:scale-90 md:hover:rotate-y-180 cursor-pointer"
+            className="hero-hamburger-cta text-novare-white-80 flex size-10 transition-all duration-700 active:scale-90 md:hover:rotate-y-180 md:hover:text-white cursor-pointer"
             aria-label="Abrir menu"
           >
             <HamburguerMenuIcon className='size-full stroke-4' />
