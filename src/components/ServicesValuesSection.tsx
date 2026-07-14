@@ -9,7 +9,7 @@ import { ArrowIcon, NovareBelt } from '@/assets/icons/Icons';
 import { services, values } from '@/data/site-content';
 import { Canvas } from '@react-three/fiber';
 import { LogoNovare3d } from './LogoNovare3d';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -152,7 +152,9 @@ export function ServicesValuesSection() {
                     <ambientLight intensity={0.7} />
                     <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
                     <pointLight position={[-5, -5, -5]} intensity={0.5} />
-                    <LogoNovare3d rotationState={logoRotationObj} />
+                    <Suspense fallback={null}>
+                      <LogoNovare3d rotationState={logoRotationObj} />
+                    </Suspense>
                   </Canvas>
                 </div>
 
