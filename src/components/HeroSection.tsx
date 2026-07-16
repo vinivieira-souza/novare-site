@@ -17,7 +17,7 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
       id="inicio"
       className="scroll-section scroll-section-hero relative w-full overflow-hidden md:z-20"
     >
-      <div className="hero-visual-wrapper relative flex h-full min-h-dvh w-full flex-col">
+      <div className="hero-visual-wrapper relative flex h-dvh w-full flex-col">
         <div
           className="shader-layer-background shader-layer-hero pointer-events-none absolute inset-0 z-0"
           aria-hidden="true"
