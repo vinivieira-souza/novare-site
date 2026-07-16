@@ -102,13 +102,6 @@ export const projectPortfolio: ProjectPortfolio[] = [
   },
 ];
 
-export const footerNavLinks = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Sobre Nós', href: '#sobre' },
-  { label: 'Portfólio', href: '#portfolio' },
-  { label: 'FAQ', href: '#faq' },
-];
-
 export const footerContactLinks: FooterContactLinks[] = [
   { label: '65 999349611', href: 'https://wa.link/y32eft', icon: WhatsappIcon },
   { label: 'novare.vision', href: 'https://www.instagram.com/novare.vision/', icon: InstagramIcon },

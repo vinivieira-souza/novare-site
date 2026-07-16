@@ -6,7 +6,6 @@ import {
   LogoNovare,
   ShiningIcon,
 } from '@/assets/icons/Icons';
-import { useEffect } from 'react';
 
 interface HeroProps {
   onOpenMenu: () => void;
@@ -33,14 +32,14 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
           />
         </div>
 
-        <header className="hero-header relative z-10 flex h-[70px] items-end justify-between px-5 md:px-10">
+        <header className="hero-header relative z-10 flex h-12 md:h-[70px] items-end justify-between px-5 md:px-10">
           <a href="#inicio" className="hero-logo-link shrink-0">
             <LogoNovare className="hero-logo target-hero-logo text-novare-white-80 h-6 transition-all duration-300 hover:text-white md:h-12" />
           </a>
 
           <button
             onClick={onOpenMenu}
-            className="hero-hamburger-cta text-novare-white-80 flex size-10 cursor-pointer transition-all duration-700 active:scale-90 md:hover:rotate-y-180 md:hover:text-white"
+            className="hero-hamburger-cta text-novare-white-80 flex size-8 md:size-10 cursor-pointer transition-all duration-700 active:scale-90 md:hover:rotate-y-180 md:hover:text-white"
             aria-label="Abrir menu"
           >
             <HamburguerMenuIcon className="size-full stroke-4" />
@@ -55,16 +54,12 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
             </span>
           </div>
 
-          <h1 className="hero-headline text-novare-white-90 font-(family-name:--font-jetbrains-mono) text-4xl leading-[1.05] font-bold tracking-[-0.0156em] md:text-[clamp(2.5rem,6vw,6rem)]">
-            Transformando ideias em
-            <br />
-            presença digital estratégica.
+          <h1 className="hero-headline text-novare-white-90 font-(family-name:--font-jetbrains-mono) text-3xl leading-[1.05] font-bold tracking-[-0.0156em] md:text-[clamp(2.5rem,6vw,6rem)]">
+            Transformando ideias em presença digital
           </h1>
 
-          <p className="hero-subheadline text-novare-white-90 max-w-3xl pt-6 font-(family-name:--font-montserrat) text-base leading-7 font-semibold md:pt-[30px] md:text-xl">
-            Da criação de sites institucionais à gestão completa de marketing.
-            <br />
-            Elevamos o patamar do seu negócio com soluções sob medida.
+          <p className="hero-subheadline text-novare-white-90 max-w-3xl pt-6 font-(family-name:--font-montserrat) text-sm leading-7 font-semibold md:pt-[30px] md:text-xl">
+            Da criação de sites institucionais à gestão completa de marketing. Elevamos o patamar do seu negócio com soluções sob medida.
           </p>
 
           <a

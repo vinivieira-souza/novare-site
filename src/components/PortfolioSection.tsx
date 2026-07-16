@@ -37,8 +37,8 @@ export function PortfolioSection() {
         {currentProject.projectName}
       </h2>
 
-      <p className="portfolio-project-caption text-novare-white-80 absolute bottom-[150px] md:bottom-[200px] left-1/2 z-10 w-full max-w-[1318px] -translate-x-1/2 px-10 text-center font-(family-name:--font-inter) text-base md:text-[clamp(1.5rem,3vw,3rem)] md:leading-[60px] font-black">
-        <span className="mb-2 block text-xs leading-snug font-semibold tracking-wide md:text-xl">
+      <p className="portfolio-project-caption text-novare-white-80 absolute bottom-[200px] left-1/2 z-10 w-full max-w-[1318px] -translate-x-1/2 px-10 text-center font-(family-name:--font-poppins) text-sm md:text-[clamp(1rem,2vw,2rem)] md:leading-[60px] font-medium">
+        <span className="mb-2 block text-xs leading-snug font-bold tracking-wide md:text-xl">
           {currentProject.projectType}
         </span>
         {currentProject.projectDescription}

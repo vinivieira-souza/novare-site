@@ -71,25 +71,25 @@ export function HamburguerMenu({ isOpen, onClose }: HamburguerMenuProps) {
       <div
         ref={menuRef}
         style={{ transform: 'translateX(100%)' }}
-        className="hamb-menu bg-novare-purple-light relative z-10 h-dvh w-full shadow-2xl md:w-[480px]"
+        className="hamb-menu bg-novare-purple-light relative z-10 max-h-dvh h-full w-full shadow-2xl md:w-[480px]"
       >
         <div className="hamb-menu-wrapper flex h-full flex-col">
-          <div className="flex justify-end px-5 md:px-10 pt-[38px]">
+          <div className="flex justify-end pt-5 px-5 md:px-10 md:pt-[38px]">
             <button
               onClick={handleClose}
               aria-label="Fechar Menu"
-              className="text-novare-dark size-8 cursor-pointer transition-transform duration-500 md:hover:rotate-90 active:scale-90"
+              className="text-novare-dark size-7 md:size-8 cursor-pointer transition-transform duration-500 md:hover:rotate-90 active:scale-90"
             >
               <CloseIcon className="close-btn-svg size-full stroke-4" />
             </button>
           </div>
-          <div className="hamb-menu-content flex flex-col items-center justify-center mt-20 md:mt-32">
+          <div className="hamb-menu-content flex flex-col items-center justify-center mt-[12dvh]">
             <HelloTextSVG className="hello-svg w-48 md:w-64" />
             <p className="text-novare-dark font-(family-name:--font-poppins) text-lg font-medium pt-4 md:pt-8">
               Como posso te ajudar hoje?
             </p>
           </div>
-          <div className="hamb-menu-links flex flex-col items-center mt-20 md:mt-32">
+          <div className="hamb-menu-links flex flex-col items-center mt-[12dvh]">
             <div className="flex w-[280px] flex-col gap-6 md:gap-8">
               <a
                 href="https://wa.link/id0p7m"
