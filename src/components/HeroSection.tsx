@@ -15,7 +15,7 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
   return (
     <section
       id="inicio"
-      className="scroll-section scroll-section-hero relative min-h-dvh w-full overflow-hidden md:z-20"
+      className="scroll-section scroll-section-hero relative w-full overflow-hidden md:z-20"
     >
       <div className="hero-visual-wrapper relative flex h-full min-h-dvh w-full flex-col">
         <div
