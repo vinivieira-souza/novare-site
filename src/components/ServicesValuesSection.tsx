@@ -91,7 +91,6 @@ export function ServicesValuesSection() {
     mm.add('(max-width: 767px)', () => {
       gsap.to('.hero-visual-wrapper', {
         yPercent: 100,
-        scale: 0.8,
         opacity: 0,
         ease: 'none',
         scrollTrigger: {
