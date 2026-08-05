@@ -89,24 +89,26 @@ export function ServicesValuesSection() {
     });
 
     mm.add('(max-width: 767px)', () => {
-      gsap.to('.hero-visual-wrapper', {
-        yPercent: 100,
-        opacity: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.scroll-section-services-values',
-          scrub: true,
-          start: 'top bottom',
-          end: 'top top',
-        },
-      });
+      // gsap.to('.hero-visual-wrapper', {
+      //   yPercent: 100,
+      //   scale: 0.8,
+      //   opacity: 0,
+      //   ease: 'none',
+      //   scrollTrigger: {
+      //     trigger: '.scroll-section-services-values',
+      //     scrub: true,
+      //     start: 'top 80%',
+      //     end: 'top top',
+      //     markers: true,
+      //   },
+      // });
 
       gsap.to('.services-panel-inner', {
         borderRadius: 0,
         scrollTrigger: {
           trigger: '.scroll-section-services-values',
           scrub: true,
-          start: 'top bottom',
+          start: 'top 80%',
           end: 'top top',
         },
       });
@@ -141,7 +143,7 @@ export function ServicesValuesSection() {
               {/* Coluna esquerda — Logo 3D + CTA */}
               <div className="services-left-column order-last flex w-full flex-col items-center justify-center gap-4 pt-8 pb-16 md:order-first md:w-1/2 md:gap-10 md:pt-16 md:pb-0">
                 <div
-                  className="threejs-logo-canvas-container relative h-64 w-full max-w-[671px] md:h-96"
+                  className="threejs-logo-canvas-container relative h-64 w-full max-w-167.75 md:h-96"
                   aria-hidden="true"
                 >
                   <Canvas
@@ -157,7 +159,7 @@ export function ServicesValuesSection() {
                   </Canvas>
                 </div>
 
-                <p className="services-cta-text max-w-[450px] text-center font-(family-name:--font-montserrat) text-2xl leading-tight text-black md:text-[clamp(1.5rem,2.5vw,2.25rem)]">
+                <p className="services-cta-text max-w-112.5 text-center font-(family-name:--font-montserrat) text-2xl leading-tight text-black md:text-[clamp(1.5rem,2.5vw,2.25rem)]">
                   Quer saber mais sobre nossos serviços?
                 </p>
 
@@ -165,7 +167,7 @@ export function ServicesValuesSection() {
                   href="https://wa.link/y32eft"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="services-contact-button primary-button bg-novare-dark inline-flex h-11 items-center gap-3 rounded-lg pr-1.5 pl-6 transition-all duration-300 active:scale-95 md:h-14 md:pr-2 md:pl-[34px] md:hover:scale-105 md:hover:brightness-110"
+                  className="services-contact-button primary-button bg-novare-dark inline-flex h-11 items-center gap-3 rounded-lg pr-1.5 pl-6 transition-all duration-300 active:scale-95 md:h-14 md:pr-2 md:pl-8.5 md:hover:scale-105 md:hover:brightness-110"
                 >
                   <span className="text-novare-purple-light font-(family-name:--font-poppins) text-base font-semibold">
                     Fale Conosco
@@ -178,13 +180,13 @@ export function ServicesValuesSection() {
 
               {/* Coluna direita — Cards de serviços */}
               <div className="services-right-column relative flex w-full flex-col items-center justify-center pt-8 md:w-1/2 md:pl-16">
-                <div className="services-trigger-container relative mt-10 h-auto overflow-visible md:mt-5 md:h-[820px] md:overflow-hidden">
+                <div className="services-trigger-container relative mt-10 h-auto overflow-visible md:mt-5 md:h-205 md:overflow-hidden">
                   <div className="service-card-fade-top hidden md:block" aria-hidden="true" />
                   <div className="services-carousel-wrapper flex flex-col">
                     <h2 className="services-section-title text-novare-text-dark pb-10 font-(family-name:--font-jetbrains-mono) text-2xl font-bold tracking-[0.0278em] md:mt-5 md:text-3xl lg:text-4xl">
                       Nossos Serviços
                     </h2>
-                    <div className="services-cards-stack flex flex-col gap-[45px]">
+                    <div className="services-cards-stack flex flex-col gap-11.25">
                       {services.map((service, index) => {
                         const ComponentIcon = service.icon;
                         return (
@@ -195,7 +197,7 @@ export function ServicesValuesSection() {
                             <div className="service-card-curves" aria-hidden="true" />
 
                             <div
-                              className={`service-card-icon absolute top-0 right-0 flex size-16 items-center justify-center rounded-full md:size-[75px] ${service.iconBgClass} z-10`}
+                              className={`service-card-icon absolute top-0 right-0 flex size-16 items-center justify-center rounded-full md:size-18.75 ${service.iconBgClass} z-10`}
                               style={{
                                 boxShadow:
                                   '2px 2px 6px 0px rgba(0, 0, 0, 0.15), inset 6px 6px 10px 0px rgba(0, 0, 0, 0.25), inset -6px -6px 10px 0px rgba(109, 109, 109, 0.25), inset 2px 2px 3px 0px rgba(255, 255, 255, 0.25), inset -1px -1px 3px 0px rgba(255, 255, 255, 0.25)',
@@ -234,9 +236,9 @@ export function ServicesValuesSection() {
 
           {/* Fase 2 — Nossos Valores */}
           <div className="section-valores-target bg-novare-purple-light relative h-auto w-screen shrink-0 overflow-hidden py-16 md:h-dvh">
-            <div className="valores-panel-inner relative mx-auto flex h-full max-w-[1920px] flex-col items-center justify-center gap-8 px-6 md:flex-row md:px-10 lg:gap-12 lg:px-20">
+            <div className="valores-panel-inner relative mx-auto flex h-full max-w-480 flex-col items-center justify-center gap-8 px-6 md:flex-row md:px-10 lg:gap-12 lg:px-20">
               {/* Quem Somos / Como Surgiu — esquerda */}
-              <div className="valores-about-left w-full text-left sm:max-w-[600px] lg:max-w-[420px] lg:flex-1">
+              <div className="valores-about-left w-full text-left sm:max-w-150 lg:max-w-105 lg:flex-1">
                 <div className="valores-quem-somos mb-9">
                   <h3 className="valores-quem-somos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold lg:text-[28px]">
                     Quem Somos
@@ -273,7 +275,7 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Grid NOVARE — centro */}
-              <div className="valores-grid-panel values-panel-shadow relative my-6 h-106 w-70 shrink-0 overflow-hidden rounded-2xl 2xl:h-[720px] 2xl:w-[580px]">
+              <div className="valores-grid-panel values-panel-shadow relative my-6 h-106 w-70 shrink-0 overflow-hidden rounded-2xl 2xl:h-180 2xl:w-145">
                 <div
                   className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
                   aria-hidden="true"
@@ -296,7 +298,7 @@ export function ServicesValuesSection() {
                   {values.map((value, index) => (
                     <div
                       key={value.letter}
-                      className={`valor-card valor-card-${value.letter.toLowerCase()} value-card-shadow flex h-22 w-22 flex-col items-center justify-center rounded-2xl bg-[rgba(0,0,0,0.2)] 2xl:h-[150px] 2xl:w-[150px]`}
+                      className={`valor-card valor-card-${value.letter.toLowerCase()} value-card-shadow flex h-22 w-22 flex-col items-center justify-center rounded-2xl bg-[rgba(0,0,0,0.2)] 2xl:h-37.5 2xl:w-37.5`}
                       data-index={index}
                     >
                       <span className="valor-card-letter font-(family-name:--font-jetbrains-mono) text-2xl font-bold text-white 2xl:text-5xl">
@@ -311,7 +313,7 @@ export function ServicesValuesSection() {
               </div>
 
               {/* Onde Estamos — direita */}
-              <div className="valores-about-right w-full text-left sm:max-w-[600px] lg:max-w-[420px] lg:flex-1">
+              <div className="valores-about-right w-full text-left sm:max-w-150 lg:max-w-105 lg:flex-1">
                 <div className="valores-onde-estamos mb-9">
                   <h3 className="valores-onde-estamos-title text-novare-text-dark font-(family-name:--font-montserrat) text-xl leading-7 font-semibold lg:text-[28px]">
                     Onde Estamos

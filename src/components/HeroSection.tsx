@@ -32,7 +32,7 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
           />
         </div>
 
-        <header className="hero-header relative z-10 flex h-12 md:h-[70px] items-end justify-between px-5 md:px-10">
+        <header className="hero-header relative z-10 flex h-12 md:h-17.5 items-end justify-between px-5 md:px-10">
           <a href="#inicio" className="hero-logo-link shrink-0">
             <LogoNovare className="hero-logo target-hero-logo text-novare-white-80 h-6 transition-all duration-300 hover:text-white md:h-12" />
           </a>
@@ -46,8 +46,8 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
           </button>
         </header>
 
-        <div className="hero-content relative z-10 mx-auto flex max-w-[1375px] flex-col items-center px-6 py-16 text-center md:px-10 md:pt-20 md:pb-24">
-          <div className="hero-badge glass-button bg-novare-glass mb-10 flex items-center gap-2 rounded-full px-4 py-2 md:mb-[62px]">
+        <div className="hero-content relative z-10 mx-auto flex max-w-343.75 flex-col items-center px-6 py-16 text-center md:px-10 md:pt-20 md:pb-24">
+          <div className="hero-badge glass-button bg-novare-glass mb-10 flex items-center gap-2 rounded-full px-4 py-2 md:mb-15.5">
             <ShiningIcon className="text-novare-white-80 stroke-novare-white-80 size-3 stroke-2 md:size-[14]" />
             <span className="text-novare-badge-text font-(family-name:--font-poppins) text-[8px] font-medium tracking-widest uppercase md:text-xs">
               Agência Digital
@@ -58,7 +58,7 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
             Transformando ideias em presença digital
           </h1>
 
-          <p className="hero-subheadline text-novare-white-90 max-w-3xl pt-6 font-(family-name:--font-montserrat) text-sm leading-7 font-semibold md:pt-[30px] md:text-xl">
+          <p className="hero-subheadline text-novare-white-90 max-w-3xl pt-6 font-(family-name:--font-montserrat) text-sm leading-7 font-semibold md:pt-7.5 md:text-xl">
             Da criação de sites institucionais à gestão completa de marketing. Elevamos o patamar do seu negócio com soluções sob medida.
           </p>
 
@@ -66,7 +66,7 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
             href="https://wa.link/id0p7m"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-cta-button primary-button bg-novare-white-80 mt-16 inline-flex h-11 items-center gap-3 rounded-lg pr-1 pl-4 transition-all duration-300 active:scale-95 md:mt-[92px] md:h-[52px] md:pr-1.5 md:pl-8 md:hover:scale-105 md:hover:brightness-90"
+            className="hero-cta-button primary-button bg-novare-white-80 mt-16 inline-flex h-11 items-center gap-3 rounded-lg pr-1 pl-4 transition-all duration-300 active:scale-95 md:mt-23 md:h-13 md:pr-1.5 md:pl-8 md:hover:scale-105 md:hover:brightness-90"
           >
             <span className="text-novare-text-dark font-(family-name:--font-poppins) text-base font-semibold">
               Solicitar Orçamento
