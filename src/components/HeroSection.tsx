@@ -1,11 +1,8 @@
-import { UnicornScene } from 'unicornstudio-react/next';
+'use client';
 
-import {
-  ArrowIcon,
-  HamburguerMenuIcon,
-  LogoNovare,
-  ShiningIcon,
-} from '@/assets/icons/Icons';
+import Silk from '@/components/shaders/Silk';
+
+import { ArrowIcon, HamburguerMenuIcon, LogoNovare, ShiningIcon } from '@/assets/icons/Icons';
 
 interface HeroProps {
   onOpenMenu: () => void;
@@ -22,24 +19,23 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
           className="shader-layer-background shader-layer-hero pointer-events-none absolute inset-0 z-0"
           aria-hidden="true"
         >
-          <UnicornScene
-            projectId="FmuYj5YODscGDRvGBbjC"
-            width="100%"
-            height="100%"
-            scale={1}
-            dpi={1.5}
-            sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.2.5/dist/unicornStudio.umd.js"
+          <Silk
+            speed={4}
+            scale={1.2}
+            color="#2867D0"
+            noiseIntensity={0.5}
+            rotation={0}
           />
         </div>
 
-        <header className="hero-header relative z-10 flex h-12 md:h-17.5 items-end justify-between px-5 md:px-10">
+        <header className="hero-header relative z-10 flex h-12 items-end justify-between px-5 md:h-17.5 md:px-10">
           <a href="#inicio" className="hero-logo-link shrink-0">
             <LogoNovare className="hero-logo target-hero-logo text-novare-white-80 h-6 transition-all duration-300 hover:text-white md:h-12" />
           </a>
 
           <button
             onClick={onOpenMenu}
-            className="hero-hamburger-cta text-novare-white-80 flex size-8 md:size-10 cursor-pointer transition-all duration-700 active:scale-90 md:hover:rotate-y-180 md:hover:text-white"
+            className="hero-hamburger-cta text-novare-white-80 flex size-8 cursor-pointer transition-all duration-700 active:scale-90 md:size-10 md:hover:rotate-y-180 md:hover:text-white"
             aria-label="Abrir menu"
           >
             <HamburguerMenuIcon className="size-full stroke-4" />
@@ -59,7 +55,8 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
           </h1>
 
           <p className="hero-subheadline text-novare-white-90 max-w-3xl pt-6 font-(family-name:--font-montserrat) text-sm leading-7 font-semibold md:pt-7.5 md:text-xl">
-            Da criação de sites institucionais à gestão completa de marketing. Elevamos o patamar do seu negócio com soluções sob medida.
+            Da criação de sites institucionais à gestão completa de marketing. Elevamos o patamar do
+            seu negócio com soluções sob medida.
           </p>
 
           <a

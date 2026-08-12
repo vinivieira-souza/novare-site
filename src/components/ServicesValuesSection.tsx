@@ -3,7 +3,7 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import UnicornScene from 'unicornstudio-react/next';
+import Plasma from '@/components/shaders/Plasma';
 
 import { ArrowIcon, NovareBelt } from '@/assets/icons/Icons';
 import { services, values } from '@/data/site-content';
@@ -89,26 +89,12 @@ export function ServicesValuesSection() {
     });
 
     mm.add('(max-width: 767px)', () => {
-      // gsap.to('.hero-visual-wrapper', {
-      //   yPercent: 100,
-      //   scale: 0.8,
-      //   opacity: 0,
-      //   ease: 'none',
-      //   scrollTrigger: {
-      //     trigger: '.scroll-section-services-values',
-      //     scrub: true,
-      //     start: 'top 80%',
-      //     end: 'top top',
-      //     markers: true,
-      //   },
-      // });
-
       gsap.to('.services-panel-inner', {
         borderRadius: 0,
         scrollTrigger: {
           trigger: '.scroll-section-services-values',
           scrub: true,
-          start: 'top 80%',
+          start: 'top bottom',
           end: 'top top',
         },
       });
@@ -206,7 +192,7 @@ export function ServicesValuesSection() {
                               <ComponentIcon className="text-novare-white-90 size-7 md:size-9" />
                             </div>
 
-                            <div className="relative flex flex-col z-10">
+                            <div className="relative z-10 flex flex-col">
                               <h3 className="service-card-title text-novare-text-dark/80 max-w-[50%] p-1 font-(family-name:--font-poppins) text-xl leading-7 font-medium md:max-w-[70%] md:text-2xl lg:p-2 lg:py-4 lg:text-[32px] lg:*:max-w-[90%]">
                                 {service.title}
                               </h3>
@@ -277,16 +263,16 @@ export function ServicesValuesSection() {
               {/* Grid NOVARE — centro */}
               <div className="valores-grid-panel values-panel-shadow relative my-6 h-106 w-70 shrink-0 overflow-hidden rounded-2xl 2xl:h-180 2xl:w-145">
                 <div
-                  className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+                  className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-black/95"
                   aria-hidden="true"
                 >
-                  <UnicornScene
-                    projectId="nvEM7D0WfugBFu6ZIM3I"
-                    width="580px"
-                    height="720px"
-                    scale={1}
-                    dpi={1.5}
-                    sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.2.5/dist/unicornStudio.umd.js"
+                  <Plasma
+                    color='#2867d0'
+                    direction='reverse'
+                    scale={0.6}
+                    mouseInteractive={false}
+                    speed={1.2}
+                    iterations={40}
                   />
                 </div>
 
