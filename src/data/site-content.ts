@@ -89,6 +89,14 @@ export const faqItems: FaqItem[] = [
     question: 'Como entro em contato?',
     answer: 'Atendemos via WhatsApp, E-mail e Instagram para garantir agilidade.',
   },
+  {
+    question: 'Vocês oferecem suporte após a entrega?',
+    answer: 'Sim, oferecemos suporte e acompanhamento conforme o escopo de cada projeto.',
+  },
+  {
+    question: 'Vocês atendem clientes de outras cidades/estados?',
+    answer: 'Sim! Nosso atendimento é 100% remoto para empresas de todo o Brasil.',
+  },
 ];
 
 export const projectPortfolio: ProjectPortfolio[] = [

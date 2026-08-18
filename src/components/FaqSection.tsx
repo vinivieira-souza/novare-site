@@ -11,6 +11,49 @@ export function FaqSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const midpoint = Math.ceil(faqItems.length / 2);
+  const leftColumnItems = faqItems.slice(0, midpoint);
+  const rightColumnItems = faqItems.slice(midpoint);
+
+  const renderFaqItem = (item: (typeof faqItems)[number], index: number) => {
+    const isOpen = openIndex === index;
+
+    return (
+      <div
+        key={item.question}
+        className="faq-item border-novare-white-30 overflow-hidden border-b w-full"
+      >
+        <button
+          onClick={() => toggleFaq(index)}
+          className="faq-question flex w-full cursor-pointer items-center justify-between gap-4 px-3 py-5 text-left select-none"
+        >
+          <span className="font-(family-name:--font-poppins) text-sm font-medium text-white">
+            {item.question}
+          </span>
+          <ChevronIcon
+            className={`size-3 shrink-0 transition-transform duration-300 ${
+              isOpen ? 'rotate-180' : 'rotate-0'
+            }`}
+            strokeWidth={2}
+          />
+        </button>
+        <div
+          className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+            isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="faq-answer px-3 pb-5">
+              <p className="text-novare-white-80 font-(family-name:--font-poppins) text-xs md:text-sm font-medium">
+                {item.answer}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section
       id="faq"
@@ -20,45 +63,17 @@ export function FaqSection() {
         Perguntas Frequentes
       </h2>
 
-      <div className="faq-list mx-auto mt-12 max-w-160 md:mt-16.25">
-        {faqItems.map((item, index) => {
-          const isOpen = openIndex === index;
+      <div className="faq-list mx-auto mt-12 flex flex-col md:hidden">
+        {faqItems.map((item, index) => renderFaqItem(item, index))}
+      </div>
 
-          return (
-            <div
-              key={item.question}
-              className="faq-item border-novare-white-30 overflow-hidden border-b"
-            >
-              <button
-                onClick={() => toggleFaq(index)}
-                className="faq-question flex w-full cursor-pointer items-center justify-between gap-4 px-3 py-5 text-left select-none"
-              >
-                <span className="font-(family-name:--font-poppins) text-sm font-medium text-white">
-                  {item.question}
-                </span>
-                <ChevronIcon
-                  className={`size-3 shrink-0 transition-transform duration-300 ${
-                    isOpen ? 'rotate-180' : 'rotate-0'
-                  }`}
-                  strokeWidth={2}
-                />
-              </button>
-              <div
-                className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-                  isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="faq-answer px-3 pb-5">
-                    <p className="text-novare-white-80 font-(family-name:--font-poppins) text-xs md:text-sm font-medium">
-                      {item.answer}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      <div className="faq-list-desktop mx-auto mt-16.25 hidden max-w-7xl items-start justify-center gap-12 md:grid md:grid-cols-2">
+        <div className="flex flex-col">
+          {leftColumnItems.map((item, idx) => renderFaqItem(item, idx))}
+        </div>
+        <div className="flex flex-col">
+          {rightColumnItems.map((item, idx) => renderFaqItem(item, idx + midpoint))}
+        </div>
       </div>
     </section>
   );
