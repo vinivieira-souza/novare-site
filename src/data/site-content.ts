@@ -82,7 +82,7 @@ export const values: ValueItem[] = [
 
 export const faqItems: FaqItem[] = [
   {
-    question: 'Vocês fazem a gravação de vídeos?',
+    question: 'Vocês fazem gravação de vídeos?',
     answer: 'No momento, focamos na edição e pós-produção de materiais enviados pelo cliente.',
   },
   {

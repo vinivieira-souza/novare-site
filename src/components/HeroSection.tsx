@@ -63,7 +63,7 @@ export function HeroSection({ onOpenMenu }: HeroProps) {
             href="https://wa.link/id0p7m"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-cta-button primary-button bg-novare-white-80 mt-16 inline-flex h-11 items-center gap-3 rounded-lg pr-1 pl-4 transition-all duration-300 active:scale-95 md:mt-23 md:h-13 md:pr-1.5 md:pl-8 md:hover:scale-105 md:hover:brightness-90"
+            className="hero-cta-button primary-button bg-novare-white-80 mt-16 inline-flex h-11 items-center gap-3 rounded-lg pr-1 pl-4 transition-all duration-300 active:scale-95 md:mt-23 md:h-13 md:pr-1.5 md:pl-8 md:hover:scale-105"
           >
             <span className="text-novare-text-dark font-(family-name:--font-poppins) text-base font-semibold">
               Solicitar Orçamento

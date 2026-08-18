@@ -248,6 +248,7 @@ body {
 
 @media (min-width: 768px) {
   .service-card {
+    width: 90%;
     height: 280px;
   }
 

@@ -14,13 +14,13 @@ export function FaqSection() {
   return (
     <section
       id="faq"
-      className="scroll-section scroll-section-faq relative w-full px-6 pt-14 pb-[90px] md:py-[90px]"
+      className="scroll-section scroll-section-faq relative w-full px-6 pt-14 pb-22.5 md:py-22.5"
     >
-      <h2 className="faq-title mx-auto max-w-dvw text-center font-(family-name:--font-jetbrains-mono) text-[clamp(2rem,4vw,3.5rem)] leading-10 font-bold tracking-[-0.0161em] text-white md:max-w-[655px]">
+      <h2 className="faq-title mx-auto max-w-dvw text-center font-(family-name:--font-jetbrains-mono) text-[clamp(2rem,4vw,3.5rem)] leading-10 font-bold tracking-[-0.0161em] text-white md:max-w-163.75">
         Perguntas Frequentes
       </h2>
 
-      <div className="faq-list mx-auto mt-12 max-w-[640px] md:mt-[65px]">
+      <div className="faq-list mx-auto mt-12 max-w-160 md:mt-16.25">
         {faqItems.map((item, index) => {
           const isOpen = openIndex === index;
 

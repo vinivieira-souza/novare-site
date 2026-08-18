@@ -46,12 +46,14 @@ export function FooterSection() {
     >
       <div className="footer-content-wrapper relative h-dvh w-full overflow-hidden">
         <div className="shader-layer-background shader-layer-footer" aria-hidden="true">
-          <Aurora
-            colorStops={['#2867d0', '#77ceff', '#2867d0']}
-            amplitude={1}
-            blend={0.5}
-            speed={1}
-          />
+          <div className="absolute top-0 left-1/2 h-full w-[250vw] min-w-7xl -translate-x-1/2 sm:w-[150vw] md:w-full md:min-w-0">
+            <Aurora
+              colorStops={['#2867d0', '#77ceff', '#2867d0']}
+              amplitude={1}
+              blend={0.5}
+              speed={1}
+            />
+          </div>
         </div>
 
         <div className="footer-content relative z-20 mx-auto flex max-w-full flex-col pt-12 pl-6 md:h-1/3 md:gap-16 md:px-20 md:pt-20 md:pb-14 lg:flex-row lg:justify-between">
