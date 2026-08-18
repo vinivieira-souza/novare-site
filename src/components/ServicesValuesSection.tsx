@@ -133,11 +133,16 @@ export function ServicesValuesSection() {
                   aria-hidden="true"
                 >
                   <Canvas
+                    dpr={[1, 1.5]}
                     camera={{ position: [0, 0, 5], fov: 45 }}
-                    gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+                    gl={{
+                      antialias: false,
+                      alpha: true,
+                      powerPreference: 'high-performance',
+                    }}
                   >
                     <ambientLight intensity={0.7} />
-                    <directionalLight position={[5, 5, 5]} intensity={1.5} castShadow />
+                    <directionalLight position={[5, 5, 5]} intensity={1.5} />
                     <pointLight position={[-5, -5, -5]} intensity={0.5} />
                     <Suspense fallback={null}>
                       <LogoNovare3d rotationState={logoRotationObj} />
@@ -267,8 +272,8 @@ export function ServicesValuesSection() {
                   aria-hidden="true"
                 >
                   <Plasma
-                    color='#2867d0'
-                    direction='reverse'
+                    color="#2867d0"
+                    direction="reverse"
                     scale={0.6}
                     mouseInteractive={false}
                     speed={1.2}
