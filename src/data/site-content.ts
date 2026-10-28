@@ -105,8 +105,24 @@ export const projectPortfolio: ProjectPortfolio[] = [
     projectType: 'Landing Page',
     projectDescription:
       'Página direcionada para publicidade e captação de clientes para a empresa VG Tacógrafos.',
-    projectImage: 'https://i.imgur.com/wWpf1Jh.png',
+    projectImage: '/vgtacografo-img.webp',
     projectLink: 'https://vgtacografo.com/',
+  },
+  {
+    projectName: 'Dr. Giovanni Odontologia',
+    projectType: 'Landing Page',
+    projectDescription:
+      'Projeto conceitual de Página de alta conversão para dentistas e/ou consultórios odontológicos.',
+    projectImage: '/giovanniodonto-img.webp',
+    projectLink: 'https://dr-giovanni-paulo-73pq.vercel.app/',
+  },
+  {
+    projectName: 'Pure Nature',
+    projectType: 'Landing Page',
+    projectDescription:
+      'Projeto conceitual de Página de alta conversão B2C para venda de produto único.',
+    projectImage: '/purenature-img.webp',
+    projectLink: 'https://purenature-eta.vercel.app/',
   },
 ];
 

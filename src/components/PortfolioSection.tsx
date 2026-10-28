@@ -28,7 +28,7 @@ export function PortfolioSection() {
       className="scroll-section scroll-section-portfolio relative flex h-dvh w-full justify-center overflow-hidden text-center"
     >
       <div
-        className="portfolio-image-placeholder absolute inset-0 bg-cover bg-center blur-[2px] brightness-50"
+        className="portfolio-image-placeholder absolute inset-0 bg-cover bg-center blur-xs brightness-30"
         style={{ backgroundImage: `url(${currentProject.projectImage})` }}
         aria-hidden="true"
       />
